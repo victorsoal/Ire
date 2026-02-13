@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #ff4e50, #fc913a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+}
+
+/* Floating hearts background */
+.hearts::before,
+.hearts::after {
+  content: "❤️ 💖 💕 💘 💝";
+  position: absolute;
+  font-size: 30px;
+  animation: float 20s linear infinite;
+  opacity: 0.2;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  max-width: 600px;
+  width: 90%;
+  z-index: 2;
+}
+
+.valentine-text {
+  font-size: 32px;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.image-container {
+  margin: 20px 0;
+}
+
+.image-container img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.08);
+}
+
+button {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 30px;
+  background: #fff;
+  color: #ff4e50;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #ffdde1;
+  transform: scale(1.05);
+}
+
+.love-note {
+  margin-top: 25px;
+  display: none;
+  animation: slideUp 1s ease forwards;
+  text-align: left;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive */
+@media(max-width: 600px) {
+  .valentine-text {
+    font-size: 24px;
+  }
+
+  .image-container img {
+    width: 180px;
+    height: 180px;
+  }
+}
